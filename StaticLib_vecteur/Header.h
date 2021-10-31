@@ -16,6 +16,9 @@ namespace math
 		bool operator==(const Vecteur3D& V) const;
 		bool operator!=(const Vecteur3D& V) const;
 		float& operator[](unsigned indice) ;
+		float operator*(const Vecteur3D& V);
+		Vecteur3D& operator^(const Vecteur3D& V);
+		double norme();
 		friend void display(Vecteur3D& V);
 		
 	};

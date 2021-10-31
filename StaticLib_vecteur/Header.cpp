@@ -70,6 +70,31 @@ float& math::Vecteur3D::operator[](unsigned indice)
 		cout << e << endl;
 	}
 }
+float math::Vecteur3D::operator*(const Vecteur3D& V)
+{
+	float res = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		res = res + (V.vect[i] * this->vect[i]);
+	}
+	return res;
+}
+Vecteur3D& math::Vecteur3D::operator^(const Vecteur3D& v)
+{
+	Vecteur3D* res = new Vecteur3D();
+	res->vect[0] = this->vect[1] * v.vect[2] - this->vect[2] * v.vect[1];
+	res->vect[1] = this->vect[2] * v.vect[0] - this->vect[0] * v.vect[2];
+	res->vect[2] = this->vect[0] * v.vect[1] - this->vect[1] * v.vect[0];
+
+	return *res;
+}
+
+double Vecteur3D::norme()
+{
+
+	return sqrt(pow(this->vect[0], 2) + pow(this->vect[1], 2) + pow(this->vect[2], 2));
+}
+
 //c innacessible lorsque je suis en dehors de l'espace de nommage 
 //mais lorsque la methode est declaré comme friend ona le droit d'acceder
 /**void display(Vecteur3D& V)

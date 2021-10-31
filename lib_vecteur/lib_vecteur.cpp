@@ -8,10 +8,20 @@ using namespace std;
 int main()
 {
     Vecteur3D V1(1, 2, 3);
+    Vecteur3D* V2=new Vecteur3D(1, 2, 3);
+    Vecteur3D* V3 = new Vecteur3D(1, 2, 3);
+
     V1.print();
     V1[1]=8;
     V1.print();
-    
+
+    float res;
+    res = V1 * *V2;
+    cout <<"le produit scalaire dees vecteurs V1 et V2 :  " << res <<endl;
+
+
+    res = V1.norme();
+    cout << "la norme V1  :  " << res << endl;
 }
 
 // Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
