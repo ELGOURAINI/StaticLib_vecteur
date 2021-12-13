@@ -1,36 +1,13 @@
 // lib_vecteur.cpp : Ce fichier contient la fonction 'main'. L'exécution du programme commence et se termine à cet endroit.
-//
-
 #include <iostream>
-#include "Header.h"
+#include "Header1.h"
 using namespace math;
 using namespace std;
 int main()
 {
-    Vecteur3D V1(1, 2, 3);
-    Vecteur3D* V2=new Vecteur3D(1, 2, 3);
-    Vecteur3D* V3 = new Vecteur3D(1, 2, 3);
-
-    V1.print();
-    V1[1]=8;
-    V1.print();
-
-    float res;
-    res = V1 * *V2;
-    cout <<"le produit scalaire dees vecteurs V1 et V2 :  " << res <<endl;
-
-
-    res = V1.norme();
-    cout << "la norme V1  :  " << res << endl;
+    Vecteur3D<int> v1(1, 2, 3);
+    Vecteur3D<int> v2(1, 2, 3);
+    v1.print();
+    int i=v1.norme();
+    cout << "la norme est" << i;
 }
-
-// Exécuter le programme : Ctrl+F5 ou menu Déboguer > Exécuter sans débogage
-// Déboguer le programme : F5 ou menu Déboguer > Démarrer le débogage
-
-// Astuces pour bien démarrer : 
-//   1. Utilisez la fenêtre Explorateur de solutions pour ajouter des fichiers et les gérer.
-//   2. Utilisez la fenêtre Team Explorer pour vous connecter au contrôle de code source.
-//   3. Utilisez la fenêtre Sortie pour voir la sortie de la génération et d'autres messages.
-//   4. Utilisez la fenêtre Liste d'erreurs pour voir les erreurs.
-//   5. Accédez à Projet > Ajouter un nouvel élément pour créer des fichiers de code, ou à Projet > Ajouter un élément existant pour ajouter des fichiers de code existants au projet.
-//   6. Pour rouvrir ce projet plus tard, accédez à Fichier > Ouvrir > Projet et sélectionnez le fichier .sln.
